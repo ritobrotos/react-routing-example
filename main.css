@@ -1,0 +1,13 @@
+.newspaper {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+p {
+   margin-bottom: 0.3rem;
+}
+
+.medium_vertical_gap {
+  margin-bottom: 20px;
+}

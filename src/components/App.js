@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch } from 'react-router';
 
 import Home from "./Home";
 import About from "./About";
@@ -10,20 +11,24 @@ export default class App extends React.Component {
     return(
       <Router>
         <div>
-          <div id="navigationMenu">
-            <ul>
-              <li> <Link to="/">Home</Link> </li>
-              <li> <Link to="/about">About</Link> </li>
-              <li> <Link to="/feedback">Feedback</Link> </li>
-            </ul>
-          </div>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <Link class="nav-item nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
+                <Link class="nav-item nav-link" to="/about">About</Link>
+                <Link class="nav-item nav-link" to="/feedback">Feedback</Link>
+              </div>
+            </div>
+          </nav>
 
-          <hr />
+          <hr class="my-4" />
 
           <div id="mainContentContainer">
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/feedback" component={Feedback} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/feedback" component={Feedback} />
+            </Switch>
           </div>
 
         </div>
